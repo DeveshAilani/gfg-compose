@@ -33,6 +33,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.devesh.gfgcompose.ui.theme.GFGComposeTheme
 
 private const val TUTORIAL_URL = "https://www.geeksforgeeks.org/android/android-jetpack-compose-tutorial/"
+private const val A2UI_URL = "https://developer.android.com/jetpack/androidx/releases/a2ui-compose"
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,6 +78,10 @@ fun GFGComposeApp() {
                     url = TUTORIAL_URL,
                     modifier = Modifier.padding(innerPadding),
                 )
+                AppDestinations.A2UI -> WebViewScreen(
+                    url = A2UI_URL,
+                    modifier = Modifier.padding(innerPadding),
+                )
                 AppDestinations.PROFILE -> ProfileScreen(
                     modifier = Modifier.padding(innerPadding),
                 )
@@ -91,6 +96,7 @@ enum class AppDestinations(
 ) {
     HOME("Home", R.drawable.ic_home),
     TUTORIAL("Tutorial", R.drawable.ic_favorite),
+    A2UI("A2UI", R.drawable.ic_outline_article),
     PROFILE("Profile", R.drawable.ic_account_box),
 }
 
